@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #ec1f55;
+    /* --primary-color: #ec1f55; */
+    --primary-color:#721798;
     --text-color: #333;
   }
   
@@ -17,7 +18,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
-  
+
   .player {
     position: relative;
     max-width: 480px;
@@ -38,7 +39,7 @@
   
   .dashboard {
     padding: 16px 16px 14px;
-    background-color: #fff;
+    background-image: linear-gradient(to right,#14D9C5, #6AD9CE);
     position: fixed;
     top: 0;
     width: 100%;
@@ -87,9 +88,12 @@
   }
   
   .control .btn {
-    color: #666;
+    color: #fff;
     padding: 18px;
     font-size: 18px;
+    padding: 4px 9px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
   }
   
   .control .btn.active {
@@ -112,7 +116,7 @@
     width: 100%;
     -webkit-appearance: none;
     height: 6px;
-    background: #d3d3d3;
+    /* background: #d3d3d3; */
     outline: none;
     opacity: 0.7;
     -webkit-transition: 0.2s;
@@ -123,8 +127,9 @@
     -webkit-appearance: none;
     appearance: none;
     width: 12px;
-    height: 6px;
-    background-color: var(--primary-color);
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
     cursor: pointer;
   }
   
@@ -132,6 +137,8 @@
   .playlist {
     margin-top: 408px;
     padding: 12px;
+    background-image: linear-gradient(to right,#14D9C5, #6AD9CE);
+
   }
   
   .song {

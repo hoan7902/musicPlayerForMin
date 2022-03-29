@@ -18,13 +18,13 @@
     <div class="dashboard">
         <!-- Header -->
         <header>
-        <h4>Now playing:</h4>
-        <h2></h2>
+        <h4 style="font-size: 15px">Now playing:</h4>
+        <h2 style="color: #fff; font-style: italic; font-weight: 400"></h2>
         </header>
 
         <!-- CD -->
         <div class="cd">
-        <div class="cd-thumb" style="background-image: url('assets/img/Nơi_này_có_anh_-_Single_Cover.jpeg')">
+        <div class="cd-thumb" style="background-image: url('')">
         </div>
         </div>
 
@@ -62,7 +62,6 @@
     <script>
         const $ = document.querySelector.bind(document)
         const $$ = document.querySelectorAll.bind(document)
-        const PLAYER_STORAGE_KEY = 'HOAN'
         var isRandom = false
         var isPlaying = false
         var isRepeat = false
@@ -83,65 +82,95 @@
             currIndex: 0,
             songs: [
                 {
-                    name: 'Nơi này có anh',
-                    singer: 'Sơn Tùng MTP',
-                    path: 'assets/music/Noi Nay Co Anh - Son Tung M-TP.mp3',
-                    image: 'assets/img/Nơi_này_có_anh_-_Single_Cover.jpeg'
+                    name: 'Anh mơ',
+                    singer: 'Anh Khang',
+                    path: 'assets/music/AnhMo-AnhKhang_3h79s.mp3',
+                    image: 'https://scontent.fsgn4-1.fna.fbcdn.net/v/t39.30808-6/277147075_1675199482830575_5751246041751148571_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=uuWSTbNptWwAX_eNYwh&tn=F92FjFIvQ_9g_ajx&_nc_ht=scontent.fsgn4-1.fna&oh=00_AT9wmehL9ZOHskaXMA2Tmo7PMJ4ohdeB2eyGjIZx51RJjw&oe=62484CA0'
                 },
                 {
-                    name: 'Tình yêu khủng long',
-                    singer: 'FAY',
-                    path: 'assets/music/TinhYeuKhungLong-FAY-6247040.mp3',
-                    image: 'assets/img/ab67616d0000b2738dec247b7456ead76e284063.jpeg'
+                    name: 'Bình yên nơi đâu',
+                    singer: 'Sơn tùng M-TP',
+                    path: 'assets/music/BinhYenNoiDau-M-TP_452gz.mp3',
+                    image: 'https://scontent.fsgn13-2.fna.fbcdn.net/v/t39.30808-6/265469274_1605340399816484_3219726314760706201_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=tPStrD1EhMYAX9u--Ft&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT-pX83-OhGPuZYNWJrMKIMAFU51JsaT17T7GYfGn7GUMw&oe=6246B49B'
                 },
                 {
-                    name: 'Ánh nắng của anh',
+                    name:'Don\'t break my heart',
+                    singer: 'Binz',
+                    path: 'assets/music/Don_t Break My Heart - Binz_ Touliver.mp3',
+                    image: 'https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.6435-9/195541086_1481342122216313_856837148052903031_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=HMr9iKA81ZQAX9UPggL&_nc_ht=scontent.fsgn4-1.fna&oh=00_AT84v1GE9XyliKACAJ9J__1hmozhBPgF97TRGo_RcWk9PQ&oe=6269BDAD'
+                },
+                {
+                    name: 'Ngày xưa em đến',
+                    singer: 'Anh Khang',
+                    path: 'assets/music/NgayXuaEmDen-AnhKhang_4dmq4.mp3',
+                    image: 'https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.6435-9/168479275_1433869756963550_8804424515934741534_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=ZTrlB6tR-gYAX8PIMc1&tn=F92FjFIvQ_9g_ajx&_nc_ht=scontent.fsgn3-1.fna&oh=00_AT-UlN13bKK86eMPabJC9L3gGyTTrlexTM9uOT4MciNxXw&oe=626A096E'
+                },
+                {
+                    name: 'Người ấy',
+                    singer: 'Trịnh Thăng Bình',
+                    path: 'assets/music/NguoiAy-TrinhThangBinh-4086656.mp3',
+                    image: 'https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-9/154194040_1407637992920060_532559634229196345_n.jpg?stp=dst-jpg_s1080x2048&_nc_cat=109&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=WfIsNrV1lXIAX-HmOh-&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT9w7MVxECfvXncc77kqkZ-UJND4hDyD4f6mHdMThDBClA&oe=626671F2'
+                },
+                {
+                    name: 'Sau tất cả',
+                    singer: 'Erik',
+                    path: 'assets/music/SauTatCa-MONSTARERIKST319-4301357.mp3',
+                    image: 'https://scontent.fsgn8-1.fna.fbcdn.net/v/t1.6435-9/150976148_1402968330053693_2456061317604218028_n.jpg?stp=dst-jpg_p843x403&_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=hJ7R7P7ZXBUAX9iOMMf&_nc_ht=scontent.fsgn8-1.fna&oh=00_AT-CFNCnNDXgjU9YUMEh8iaWIc7RWZFRu645uiED4Lv11A&oe=6267F504'
+                },
+                {
+                    name: 'Hai mươi',
+                    singer: 'Mỹ Tâm',
+                    path: 'assets/music/TaiNhacHay.Biz - Hai Mươi.mp3',
+                    image: 'https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.6435-9/140371531_1381059575577902_3604671538113169024_n.jpg?stp=dst-jpg_s1080x2048&_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=nMbiVXcN72wAX_laIBq&_nc_ht=scontent.fsgn3-1.fna&oh=00_AT_VNiTWwejG9NYvt4UKPolvoPMatZDz3F48dhfUvCTaOw&oe=626710E5'
+                },
+                {
+                    name: 'Anh yêu nhiều lắm',
                     singer: 'Đức Phúc',
-                    path: 'assets/music/AnhNangCuaAnhChoEmDenNgayMaiOst-DucPhuc-4701036.mp3',
-                    image: 'assets/img/anh-nang-cua-anh.jpeg'
+                    path: 'assets/music/ Anh Yêu Em Nhiều Lắm  Đức Phúc  Eye Contact LIVE  4th Project.mp3',
+                    image: 'https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-9/128542480_1348461085504418_1768643515213876566_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=WDxAvE6bfbUAX9g43KP&_nc_oc=AQkj2kU7CjFo1YCDMKuILP_JWcnVL9--xM32CUofVEIr-I6MQwdgzlEDVR6extiSWtc&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT_OZsVSnHmKT6TklAhzf5wj1xRis9Ap_1AKQnbQEoZNNQ&oe=62688A4D'
                 },
                 {
-                    name: 'Sóng Gió',
-                    singer: 'Jack, K-ICM',
-                    path: 'assets/music/SÓNG GIÓ _ K-ICM x JACK.mp3',
-                    image: 'assets/img/sóng-gió.jpeg'
+                    name: 'Dear future husband',
+                    singer: 'Meghan Trainor',
+                    path: 'assets/music/Dear Future Husbandlyrics.mp3',
+                    image: 'https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-9/109685051_1230585263958668_1012960604166896290_n.jpg?stp=dst-jpg_s1080x2048&_nc_cat=109&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=HanWglTS-TwAX9FhNmE&tn=F92FjFIvQ_9g_ajx&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT9fL9SxX-hShNsyh78bF24Ar5f3iylaheh8DNxea57IQQ&oe=6266ECBB'
                 },
                 {
-                    name: 'Thay Lòng',
-                    singer: 'NAI, TVk',
-                    path: 'assets/music/ThayLong-NalTVkLeGiaQuan-7095763.mp3',
-                    image: 'assets/img/thay-lòng.jpeg'
+                    name: 'I\'m gonna lose you',
+                    singer: 'Meghan Trainor',
+                    path: 'assets/music/Im Gonna Lose You Official Video ft John Legend.mp3',
+                    image: 'https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.6435-9/37728322_691441794539687_3779600056890425344_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=ssQYb8wmsfkAX9wwAhw&_nc_ht=scontent.fsgn4-1.fna&oh=00_AT8AFALP2fSFFm7G3ZEDDbc75ZClUJpg7Ma3Vd04h_8Big&oe=626980FF'
                 },
                 {
-                    name: 'Cô độc vương',
-                    singer: 'Thiên Tú',
-                    path: 'assets/music/CoDocVuong-Gumin-6951236.mp3',
-                    image: 'assets/img/maxresdefault.jpeg'
+                    name: 'Mùa thu cho em',
+                    singer: 'Trinh',
+                    path: 'assets/music/Mùa thu cho em.mp3',
+                    image: '\https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.6435-9/119422376_1279281702422357_8861280464028376742_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=dFGJHxPKbnAAX-BX2Ud&_nc_ht=scontent.fsgn4-1.fna&oh=00_AT9ciBwWSFy2xTumjmX1bt5_GqvnFS1lAac3XSUGHXKgNw&oe=6269DC45'
                 },
                 {
-                    name: 'Rồi tới luôn',
-                    singer: 'NAI',
-                    path: 'assets/music/RoiToiLuon-Nal-7064237.mp3',
-                    image: 'assets/img/rồi tới luôn.jpeg'
+                    name: 'Mùa đông của anh',
+                    singer: 'Mỹ Tâm',
+                    path: 'assets/music/Mỹ Tâm  Mùa Đông Của Anh   Special Present.mp3',
+                    image: 'https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.6435-9/51840047_837621786588353_2570953649425481728_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=uQNiJ3LVvt8AX8_VSbx&_nc_ht=scontent.fsgn4-1.fna&oh=00_AT8i-zAIR1GEyfnL2gq-oIpeI9YztGFA2Bw-rH2FmpxDxw&oe=6266CF6B'
                 },
                 {
-                    name: 'Em của ngày hôm qua',
-                    singer: 'Sơn Tùng MTP',
-                    path: 'assets/music/EmCuaNgayHomQua-SonTungMTP-2882720.mp3',
-                    image: 'assets/img/em của ngày hôm qua.jpeg'
+                    name: 'Ước gì',
+                    singer: 'Mỹ Tâm',
+                    path: 'assets/music/Mỹ Tâm  Ước Gì I WISH MV.mp3',
+                    image: 'https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.6435-9/119422376_1279281702422357_8861280464028376742_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=dFGJHxPKbnAAX-BX2Ud&_nc_ht=scontent.fsgn4-1.fna&oh=00_AT9ciBwWSFy2xTumjmX1bt5_GqvnFS1lAac3XSUGHXKgNw&oe=6269DC45'
                 },
                 {
-                    name: 'Nụ cười',
-                    singer: 'Doãn Hiếu',
-                    path: 'assets/music/NuCuoi1820-DoanHieu-6330230.mp3',
-                    image: 'assets/img/nụ cười.jpeg'
+                    name: 'Tình yêu chậm trễ',
+                    singer: 'Monstar',
+                    path: 'assets/music/TÌNH YÊU CHẬM TRỄ  Official Music Video.mp3',
+                    image: 'https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.18169-9/21314520_514838632200005_2315071833975255325_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=9BAU5naUYp4AX9MXCYg&tn=F92FjFIvQ_9g_ajx&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT_wG1rOAWyqfwiaGJ7-TfcJmOpBFO0ZRyCxFIo-teHt-g&oe=62681A6D'
                 },
             ],
             renderMusic: function(){
                 var htmls = this.songs.map(function(song, index){
                     return `
                     <div class="song ${app.currIndex === index ? 'active' : ''}" data-index="${index}"=>
-                    <div class="thumb" style="background-image: url('${song.image}')">
+                    <div class="thumb" style="background-image: url('${song.image}');background-size: 100% 100%;">
                     </div>
                     <div class="body">
                         <h3 class="title">${song.name}</h3>
@@ -301,6 +330,8 @@
             loadCurrSong: function() {
                 heading.textContent = this.currSong.name
                 cdThumb.style.backgroundImage = `url('${this.currSong.image}')`
+                cdThumb.style.backgroundSize = `100% 100%`
+
                 audio.src = this.currSong.path
             },
             nextSong: function() {
