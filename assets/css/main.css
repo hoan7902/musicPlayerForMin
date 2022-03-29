@@ -1,6 +1,7 @@
 :root {
     /* --primary-color: #ec1f55; */
-    --primary-color:#721798;
+    /* --primary-color:#721798; */
+    --primary-color:blue;
     --text-color: #333;
   }
   
@@ -97,7 +98,7 @@
   }
   
   .control .btn.active {
-    color: var(--primary-color);
+    background-color: #721798;
   }
   
   .control .btn-toggle-play {
