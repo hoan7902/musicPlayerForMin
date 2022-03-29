@@ -130,7 +130,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: blue;
     cursor: pointer;
   }
   
